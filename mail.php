@@ -4,10 +4,10 @@ require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-$name_spare = $_POST['name_spare'];
-$vin_number = $_POST['vin_number'];
-$name_client = $_POST['name_client'];
-$tel_number = $_POST['tel_number'];
+$spare = $_POST['name_spare'];
+$vin = $_POST['vin_number'];
+$name = $_POST['name_client'];
+$tel = $_POST['tel_number'];
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
@@ -30,8 +30,8 @@ $mail->addAddress('ktsoliarevich@gmail.com');     // Кому будет ухо�
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Заявка для уточнення вартості запчастини';
-$mail->Body    = '' .$name_client . ' залишив заявку. Цікавить запчастина - '.$name_spare. '<br>VIN номер кузова: ' 
-.$vin_number. '<br>Номер телефону - ' .$tel_number. '';
+$mail->Body    = '' .$name . ' залишив заявку. Цікавить запчастина - '.$spare. '<br>VIN номер кузова: ' 
+.$vin. '<br>Номер телефону - ' .$tel. '';
 $mail->AltBody = '';
 
 if(!$mail->send()) {
