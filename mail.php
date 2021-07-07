@@ -31,7 +31,7 @@ $mail->isHTML(true);                                  // Set email format to HTM
 
 $mail->Subject = 'Заявка для уточнення вартості запчастини';
 $mail->Body    = '' .$name . ' залишив заявку. Цікавить запчастина - '.$spare. '<br>VIN номер кузова: ' 
-.$vin. '<br>Номер телефону - ' .$tel. '';
+.$vin. '<br>Номер телефону - ' .$tel;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
